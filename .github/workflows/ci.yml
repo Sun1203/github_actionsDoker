@@ -39,5 +39,8 @@ jobs:
       run: ./gradlew build
     - name: Docker build
       run: |
+        docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
         docker build -t spring-cicd .
+        docker tag spring-cicd ${{ secrets.USERNAME }}/spring-cicd:${GITHUB_SHA::7}
+        docker push ${{ secrets.USERNAME }}/spring-cicd:${GITHUB_SHA::7}
 
