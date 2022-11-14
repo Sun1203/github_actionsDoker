@@ -57,3 +57,4 @@ jobs:
           docker stop server
           docker run -d --rm --name server -p 80:8080 spring-cicd
           
+          
