@@ -12,9 +12,12 @@ public class HelloController {
     @Value("${test.name}")
     private String name;
 
+    @Value("${test.age}")
+    private Long age;
+
     @GetMapping("/hello")
     public String hello() {
 
-        return "Hello World" + name;
+        return "Hello World" + " " + name + " " + age;
     }
 }
