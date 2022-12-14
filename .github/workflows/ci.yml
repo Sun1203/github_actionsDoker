@@ -58,10 +58,9 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         envs: GITHUB_SHA
         script: |
-          docker pull leejasun/spring-cicd:${GITHUB_SHA::7}
-          docker tag leejasun/spring-cicd:${GITHUB_SHA::7} spring-cicd
-          docker stop server
-          docker run -d --rm --name server -p 80:8080 spring-cicd
+              export BUILD_NUMBER=${GITHUB_SHA::7}
+              ./deploy.sh
+
           
           
           
