@@ -57,8 +57,8 @@ jobs:
         username: ec2-user
         key: ${{ secrets.PRIVATE_KEY }}
         envs: GITHUB_SHA
+        run: export BUILD_NUMBER=${GITHUB_SHA::7}
         script: |
-              export BUILD_NUMBER=${GITHUB_SHA::7}
               ./deploy.sh
 
           
