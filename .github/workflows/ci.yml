@@ -59,6 +59,8 @@ jobs:
         envs: GITHUB_SHA
         script: |
               echo export "BUILD_NUMBER=${GITHUB_SHA::7}"
+              echo export "IMAGE_STORAGE=leejasun"
+              echo export "IMAGE_NAME=spring-cicd"
               ./deploy.sh
 
           
