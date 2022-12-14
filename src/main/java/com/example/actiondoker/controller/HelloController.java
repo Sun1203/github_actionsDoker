@@ -18,6 +18,6 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
 
-        return "Hello World" + " " + name + " " + age + "test1";
+        return "Hello World" + " " + name + " " + age + "test1" + "nginx";
     }
 }
